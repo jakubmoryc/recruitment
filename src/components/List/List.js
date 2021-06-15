@@ -1,40 +1,52 @@
 import React, { useEffect, useState } from 'react'
 import Container from '@material-ui/core/Container';
-import { DataGrid } from '@material-ui/data-grid';
 import './list.css'
 import axios from 'axios';
+import MaterialTable from 'material-table';
 
 export default function List() {
 
     const [planetData, setPlanetData] = useState([])
 
-    //Get planets from the API
-    useEffect(() => {
-        axios
-        .get('https://swapi.dev/api/planets')
-        .then(json => console.log(json))
-    }, [])
+    //Define columns
+    const columns =
+    [   
+        { title: 'Name', field: 'name' },
+        { title: 'Rotation Period', field: 'rotation_period' },
+        { title: 'Climate', field: 'climate'},
+        { title: 'Gravity', field: 'gravity'},
+        { title: 'Created', field: 'created'},
+        { title: 'Url', field: 'url'}
+    ]
 
-    //Grid setup
-    const rows = [
-        { id: 1, col1: "Hello", col2: "World" },
-        { id: 2, col1: "XGrid", col2: "is Awesome" },
-        { id: 3, col1: "Material-UI", col2: "is Amazing" },
-        { id: 4, col1: "Hello", col2: "World" },
-        { id: 5, col1: "XGrid", col2: "is Awesome" },
-        { id: 6, col1: "Material-UI", col2: "is Amazing" }
-      ];
-      
-      const columns = [
-        { field: "id", hide: true },
-        { field: "col1", headerName: "Column 1", width: 150 },
-        { field: "col2", headerName: "Column 2", width: 150 }
-      ];
+    // Get all data from pages from the API
+    async function getAllPlanets() {
+        let result = []
+        let pageTotal = 6 // I decided to use a fixed number of pages for simplicity, could be done differently tho
+    
+        for(let i = 1; i <= pageTotal; i++) {
+            await axios
+                    .get("https://swapi.dev/api/planets?page=" + i)
+                    .then(json => {
+                        result = result.concat(json.data.results)
+                    })
+        }
+        setPlanetData(result)
+    }
+
+    // mount the component
+    useEffect(() => {
+        getAllPlanets()
+    }, [])
 
     return (
         <div className="list">
-            <Container maxWidth="md">
-                <DataGrid rows={rows} columns={columns} />
+            <Container maxWidth="lg">
+                <MaterialTable
+                    title="Planet List"
+                    columns={columns}
+                    data={planetData}
+                />
             </Container>
         </div>
     )
