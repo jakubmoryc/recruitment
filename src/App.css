@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+
+.appContainer {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
