@@ -1,5 +1,5 @@
-import List from './components/List/List';
-import Navbar from './components/Navbar/Navbar';
+import List from './components/List/List'
+import Navbar from './components/Navbar/Navbar'
 
 import './App.css'
 

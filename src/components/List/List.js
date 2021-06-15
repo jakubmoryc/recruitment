@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import Container from '@material-ui/core/Container';
-import './list.css'
-import axios from 'axios';
-import MaterialTable from 'material-table';
+import Container from '@material-ui/core/Container'
+import './List.css'
+import axios from 'axios'
+import MaterialTable from 'material-table'
 
 export default function List() {
 
     const [planetData, setPlanetData] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
 
-    //Define columns
+    //Define gridcolumns
     const columns =
     [   
         { title: 'Name', field: 'name' },
@@ -21,8 +22,9 @@ export default function List() {
 
     // Get all data from pages from the API
     async function getAllPlanets() {
+        setIsLoading(true)
         let result = []
-        let pageTotal = 6 // I decided to use a fixed number of pages for simplicity, could be done differently tho
+        let pageTotal = 6 // I decided to use a fixed number of pages for simplicity
     
         for(let i = 1; i <= pageTotal; i++) {
             await axios
@@ -32,6 +34,7 @@ export default function List() {
                     })
         }
         setPlanetData(result)
+        setIsLoading(false)
     }
 
     // mount the component
@@ -40,14 +43,17 @@ export default function List() {
     }, [])
 
     return (
+        
         <div className="list">
             <Container maxWidth="lg">
                 <MaterialTable
-                    title="Planet List"
+                    title={null}
                     columns={columns}
                     data={planetData}
+                    isLoading={isLoading}
                 />
             </Container>
         </div>
+        
     )
 }
