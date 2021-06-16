@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/recruitment-task/static/css/main.077a212d.chunk.css",
+    "main.js": "/recruitment-task/static/js/main.b14f904c.chunk.js",
+    "main.js.map": "/recruitment-task/static/js/main.b14f904c.chunk.js.map",
+    "runtime-main.js": "/recruitment-task/static/js/runtime-main.a67f2a10.js",
+    "runtime-main.js.map": "/recruitment-task/static/js/runtime-main.a67f2a10.js.map",
+    "static/js/2.5644fa27.chunk.js": "/recruitment-task/static/js/2.5644fa27.chunk.js",
+    "static/js/2.5644fa27.chunk.js.map": "/recruitment-task/static/js/2.5644fa27.chunk.js.map",
+    "static/js/3.b3e6804b.chunk.js": "/recruitment-task/static/js/3.b3e6804b.chunk.js",
+    "static/js/3.b3e6804b.chunk.js.map": "/recruitment-task/static/js/3.b3e6804b.chunk.js.map",
+    "static/js/4.915a65a9.chunk.js": "/recruitment-task/static/js/4.915a65a9.chunk.js",
+    "static/js/4.915a65a9.chunk.js.map": "/recruitment-task/static/js/4.915a65a9.chunk.js.map",
+    "static/js/5.6b03e82b.chunk.js": "/recruitment-task/static/js/5.6b03e82b.chunk.js",
+    "static/js/5.6b03e82b.chunk.js.map": "/recruitment-task/static/js/5.6b03e82b.chunk.js.map",
+    "index.html": "/recruitment-task/index.html",
+    "static/css/main.077a212d.chunk.css.map": "/recruitment-task/static/css/main.077a212d.chunk.css.map",
+    "static/js/2.5644fa27.chunk.js.LICENSE.txt": "/recruitment-task/static/js/2.5644fa27.chunk.js.LICENSE.txt",
+    "static/js/3.b3e6804b.chunk.js.LICENSE.txt": "/recruitment-task/static/js/3.b3e6804b.chunk.js.LICENSE.txt",
+    "static/js/4.915a65a9.chunk.js.LICENSE.txt": "/recruitment-task/static/js/4.915a65a9.chunk.js.LICENSE.txt",
+    "static/js/5.6b03e82b.chunk.js.LICENSE.txt": "/recruitment-task/static/js/5.6b03e82b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a67f2a10.js",
+    "static/js/3.b3e6804b.chunk.js",
+    "static/css/main.077a212d.chunk.css",
+    "static/js/main.b14f904c.chunk.js"
+  ]
+}
