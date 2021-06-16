@@ -28,7 +28,7 @@ export default function List() {
     
         for(let i = 1; i <= pageTotal; i++) {
             await axios
-                    .get("https://swapi.dev/api/planets?page=" + i)
+                    .get("https://swapi.dev/api/planets/?page=" + i)
                     .then(json => {
                         result = result.concat(json.data.results)
                     })
